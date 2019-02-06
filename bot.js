@@ -115,7 +115,7 @@ client.on('ready', () => {//new ready event
                         role.edit({color : "RANDOM"});
                     };
         });
-    }, 500);//the rainbow time
+    }, 10);//the rainbow time
   })
   
     
@@ -376,6 +376,8 @@ client.on("message", message => {
 💎^ping 『لمعرفه سرعه البوت』
  
 💎^members 『معلومات عن الاعضاء』
+
+💎^rainbow 『لكي يعطيك البوت رتبة الرينبو』
  
 💎^embed 『خاصيه غرد لكن بغير طريقه』
  
@@ -396,6 +398,8 @@ client.on("message", message => {
 👑^clear 『لمسح الشات برقم』
  
 👑^edit  『لتعديل رساله 』
+
+👑^cRainbow  『لانشاء رتبة الرينبو 』
  
 👑^ct  مـلاحظه: الاسم انت تختاره『لي انشاء روم كتابي』
  
@@ -492,6 +496,8 @@ client.on("message", message => {
 👑^clear 『لمسح الشات برقم』
  
 👑^edit  『لتعديل رساله 』
+
+👑^cRainbow  『لانشاء رتبة الرينبو 』
  
 👑^ct  مـلاحظه: الاسم انت تختاره『لي انشاء روم كتابي』
  
@@ -556,6 +562,8 @@ client.on("message", message => {
 💎^ping 『لمعرفه سرعه البوت』
  
 💎^members 『معلومات عن الاعضاء』
+
+💎^rainbow 『لكي يعطيك البوت رتبة الرينبو』
  
 💎^embed 『خاصيه غرد لكن بغير طريقه』
  
@@ -656,6 +664,7 @@ client.on('message', message => {
  
 // ^say
   if (command === "say") {
+                       if (!message.member.hasPermission("ADMINISTRATOR"))  return;
           message.delete()
     message.channel.sendMessage(args.join(" ")).catch(console.error);
   }
@@ -663,6 +672,7 @@ client.on('message', message => {
  
  
 if (command == "embed") {
+                       if (!message.member.hasPermission("ADMINISTRATOR"))  return;
     let say = new Discord.RichEmbed()
     .setDescription(args.join("  "))
     .setColor(0x23b2d6)
