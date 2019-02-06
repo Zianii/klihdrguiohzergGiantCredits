@@ -115,7 +115,7 @@ client.on('ready', () => {//new ready event
                         role.edit({color : "RANDOM"});
                     };
         });
-    }, 100);//the rainbow time
+    }, 500);//the rainbow time
   })
   
     
