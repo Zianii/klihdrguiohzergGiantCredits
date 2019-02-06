@@ -664,7 +664,7 @@ client.on('message', message => {
  
 // ^say
   if (command === "say") {
-                       if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+   if (!message.member.hasPermission("ADMINISTRATOR"))  return;
           message.delete()
     message.channel.sendMessage(args.join(" ")).catch(console.error);
   }
@@ -672,7 +672,7 @@ client.on('message', message => {
  
  
 if (command == "embed") {
-                       if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+    if (!message.member.hasPermission("ADMINISTRATOR"))  return;
     let say = new Discord.RichEmbed()
     .setDescription(args.join("  "))
     .setColor(0x23b2d6)
