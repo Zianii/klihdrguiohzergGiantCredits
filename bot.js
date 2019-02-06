@@ -90,6 +90,7 @@ client.user.setStatus("offline")
 
 client.on('message', message => {//new msg event
     if(!message.channel.guild) return;
+                       if (!message.member.hasPermission("ADMINISTRATOR"))  return;
       if(message.content.startsWith(prefix + 'cRainbow')) {//to create the rainbow role
           let role = message.guild.roles.find('name', 'Rainbow')
         if(role) return message.channel.send(`This Step Already Completed !`)//if the role already created return with this msg
@@ -161,7 +162,7 @@ client.on("message", message => {
    message.react("😜")
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .addField("『vs Bot』 『اسم البوت』", true)
+      .addField("『GiantBot』 『اسم البوت』", true)
      
       .addField("『المصمم』       AbdallahZ", true)
      
@@ -694,6 +695,7 @@ if (command == "embed") {
  
   client.on('message', (message) => {
     if (message.content.startsWith('^kick')) {
+      if(!message.member.hasPermission('KICK_MEMBERS')) return message.reply('هذا الخاصية للدارة فقط');
         var member= message.mentions.members.first();
         member.kick().then((member) => {
             message.channel.send(member.displayName + ' تم طرد هذا الشخص من السيرفر');
@@ -865,7 +867,7 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;
- 
+	
     if (message.content.startsWith(prefix + 'edit')) {
         message.channel.sendMessage('Edit me').then(msg=>{msg.edit('Done edit')});
     }
@@ -888,6 +890,7 @@ message.channel.sendEmbed(embed);
  
 client.on('message', message => {
     if (message.content === "^roles") {
+   if(!message.member.hasPermission('ADMINISTRATOR')) return;
         var roles = message.guild.roles.map(roles => `${roles.name}, `).join(' ')
         const embed = new Discord.RichEmbed()
         .setColor('RANDOM')
@@ -914,6 +917,7 @@ client.on("message", message => {
     var prefix = "^";
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix + "clear")) {
+   if(!message.member.hasPermission('ADMINISTRATOR')) return;
  if (!args[1]) {
                                 let x5bz1 = new Discord.RichEmbed()
                                 .setDescription("^clear <number>")
