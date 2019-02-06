@@ -772,7 +772,7 @@ client.on('message', message => {
     }
 });
  
-  var prefix = "^";
+
   const HeRo = new Discord.Client();
   client.on('message', message => {
       if (message.content === prefix + "date") {
@@ -814,7 +814,7 @@ client.on('message', message => {
  
  
  
-var prefix = "^"
+
  
 client.on('message', message => {
     if (message.author.bot) return;
