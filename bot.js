@@ -1331,7 +1331,7 @@ client.on('message', message => {
 
 
 client.on("message",async msg => {
-    var Alpha = '!';
+    var Alpha = '^';
     if(msg.content.startsWith(Alpha  + "تقديم")){
         var channel = msg.guild.channels.find("name", "التقديمات");
         if(!channel) return msg.reply("**لا اجد روم باْسم `التقديمات`**")
