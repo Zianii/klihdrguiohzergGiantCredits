@@ -1386,7 +1386,7 @@ msg.channel.awaitMessages(fltr, {
                    .setTitle("**تقديم اداره**")
                    .addField("**الاسم**", name)
                    .addField("**العمر**", age)
-                   .addField("**البلد**", from)
+                   .addField("**البلد وماذا سيساعد**", from)
                    .addField("**الحساب**", msg.author)
                    .addField("**ايدي الحساب**", msg.author.id)
                    .setThumbnail(msg.author.avatarURL)
